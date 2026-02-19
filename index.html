@@ -1,169 +1,268 @@
 <!DOCTYPE html>
 <html lang="de">
 <head>
-  <meta charset="UTF-8">
-  <title>Ionel Rotaru – Fliesenlegerbetrieb</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Professioneller Fliesenlegerbetrieb in Lauffen am Neckar. Qualität, Präzision und Zuverlässigkeit.">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Ionel Rotaru – Fliesenlegerbetrieb</title>
+<meta name="description" content="Professioneller Fliesenlegerbetrieb in Lauffen am Neckar. Qualität, Präzision und Zuverlässigkeit.">
 
-  <style>
-    * {
-      box-sizing: border-box;
-    }
+<style>
 
-    body {
-      margin: 0;
-      font-family: Arial, Helvetica, sans-serif;
-      background: #f5f5f5;
-      color: #222;
-    }
+* {
+  box-sizing: border-box;
+}
 
-    header {
-      background: white;
-      padding: 40px 20px;
-      text-align: center;
-    }
+body {
+  margin: 0;
+  font-family: 'Segoe UI', Arial, sans-serif;
+  background: #f4f4f4;
+  color: #222;
+}
 
-    header img {
-      max-width: 400px;
-      width: 100%;
-      margin-bottom: 20px;
-    }
+/* ---------------- HEADER ---------------- */
 
-    h1 {
-      margin: 0;
-      font-size: 2rem;
-      color: #b30000;
-    }
+header {
+  background: white;
+  padding: 60px 20px 40px;
+  text-align: center;
+  border-bottom: 1px solid #eee;
+}
 
-    section {
-      padding: 60px 20px;
-      max-width: 1000px;
-      margin: auto;
-    }
+header img {
+  max-width: 420px;
+  width: 100%;
+  margin-bottom: 25px;
+}
 
-    .about {
-      text-align: center;
-    }
+h1 {
+  margin: 0;
+  font-size: 2.2rem;
+  color: #b30000;
+  font-weight: 600;
+}
 
-    .about p {
-      max-width: 700px;
-      margin: auto;
-      line-height: 1.6;
-    }
+/* ---------------- SECTION GENERIC ---------------- */
 
-    .gallery-wrapper {
+section {
+  padding: 80px 20px;
+  max-width: 1100px;
+  margin: auto;
+}
+
+h2 {
+  text-align: center;
+  margin-bottom: 40px;
+  font-size: 1.8rem;
+}
+
+/* ---------------- ABOUT ---------------- */
+
+.about p {
+  max-width: 750px;
+  margin: auto;
+  line-height: 1.7;
+  text-align: center;
+  font-size: 1.05rem;
+}
+
+/* ---------------- GALLERY SLIDER ---------------- */
+
+.slider {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.gallery-wrapper {
   overflow-x: auto;
-  margin-top: 40px;
+  scroll-behavior: smooth;
+  width: 100%;
 }
 
 .gallery {
   display: flex;
-  gap: 20px;
-  scroll-snap-type: x mandatory;
-  padding-bottom: 10px;
+  gap: 25px;
+  padding: 10px;
 }
 
 .gallery img {
-  flex: 0 0 70%;
-  max-width: 400px;
-  height: 280px;
+  flex: 0 0 85%;
+  height: 300px;
   object-fit: cover;
-  border-radius: 10px;
-  scroll-snap-align: start;
-  transition: transform 0.3s ease;
+  border-radius: 14px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 .gallery img:hover {
   transform: scale(1.03);
+  box-shadow: 0 10px 25px rgba(0,0,0,0.15);
 }
 
-/* Desktop più largo */
+/* Desktop layout */
 @media (min-width: 900px) {
   .gallery img {
     flex: 0 0 32%;
   }
 }
 
-/* Scrollbar più elegante (opzionale) */
-.gallery-wrapper::-webkit-scrollbar {
-  height: 8px;
+/* Frecce */
+
+.nav {
+  background: rgba(0,0,0,0.6);
+  color: white;
+  border: none;
+  font-size: 26px;
+  padding: 10px 14px;
+  cursor: pointer;
+  border-radius: 50%;
+  position: absolute;
+  z-index: 10;
+  transition: 0.3s;
 }
 
-.gallery-wrapper::-webkit-scrollbar-thumb {
+.nav:hover {
+  background: #b30000;
+}
+
+.prev {
+  left: -15px;
+}
+
+.next {
+  right: -15px;
+}
+
+@media (max-width: 768px) {
+  .nav {
+    display: none;
+  }
+}
+
+/* Puntini */
+
+.dots {
+  text-align: center;
+  margin-top: 20px;
+}
+
+.dots span {
+  height: 10px;
+  width: 10px;
   background: #ccc;
-  border-radius: 4px;
+  border-radius: 50%;
+  display: inline-block;
+  margin: 0 6px;
 }
 
+/* ---------------- CONTACT ---------------- */
 
-    .gallery img {
-      width: 100%;
-      height: 250px;
-      object-fit: cover;
-      border-radius: 6px;
-    }
+.contact {
+  background: #1f1f1f;
+  color: white;
+  text-align: center;
+  padding: 70px 20px;
+}
 
-    .contact {
-      background: #222;
-      color: white;
-      text-align: center;
-      padding: 50px 20px;
-    }
+.contact h2 {
+  margin-bottom: 25px;
+}
 
-    .contact a {
-      color: #ff4d4d;
-      text-decoration: none;
-      font-weight: bold;
-    }
+.contact p {
+  margin: 10px 0;
+  font-size: 1.05rem;
+}
 
-    footer {
-      text-align: center;
-      padding: 20px;
-      font-size: 0.9rem;
-      background: #111;
-      color: #aaa;
-    }
-  </style>
+.contact a {
+  color: #ff4d4d;
+  text-decoration: none;
+  font-weight: 600;
+}
+
+.contact a:hover {
+  text-decoration: underline;
+}
+
+/* ---------------- FOOTER ---------------- */
+
+footer {
+  text-align: center;
+  padding: 20px;
+  font-size: 0.9rem;
+  background: #111;
+  color: #aaa;
+}
+
+</style>
 </head>
+
 <body>
 
-  <header>
-    <img src="logo.png" alt="Ionel Rotaru Fliesenlegerbetrieb">
-    <h1>Fliesenlegerbetrieb in Lauffen am Neckar</h1>
-  </header>
+<header>
+  <img src="logo.png" alt="Ionel Rotaru Fliesenlegerbetrieb">
+  <h1>Fliesenlegerbetrieb in Lauffen am Neckar</h1>
+</header>
 
-  <section class="about">
-    <h2>Über uns</h2>
-    <p>
-      Wir sind Ihr zuverlässiger Partner für professionelle Fliesenarbeiten.
-      Mit langjähriger Erfahrung bieten wir präzise und hochwertige
-      Verlegung von Wand- und Bodenfliesen für Privat- und Gewerbekunden.
-    </p>
-  </section>
-
-<section>
-  <h2 style="text-align:center;">Unsere Arbeiten</h2>
-
-  <div class="gallery-wrapper">
-    <div class="gallery">
-      <img src="img1.png" alt="Projekt 1">
-      <img src="img2.png" alt="Projekt 2">
-      <img src="img3.png" alt="Projekt 3">
-      <img src="img4.png" alt="Projekt 4">
-    </div>
-  </div>
+<section class="about">
+  <h2>Über uns</h2>
+  <p>
+    Wir sind Ihr zuverlässiger Partner für professionelle Fliesenarbeiten.
+    Mit langjähriger Erfahrung bieten wir präzise und hochwertige Verlegung von
+    Wand- und Bodenfliesen für Privat- und Gewerbekunden. Qualität,
+    Sauberkeit und termingerechte Ausführung stehen bei uns an erster Stelle.
+  </p>
 </section>
 
-  <section class="contact">
-    <h2>Kontakt</h2>
-    <p>📍 D-74348 Lauffen am Neckar · Mühltorstraße 33</p>
-    <p>📧 <a href="mailto:ionelrotaru35@gmail.com">ionelrotaru35@gmail.com</a></p>
-    <p>📱 <a href="tel:+4915750833124">015750833124</a></p>
-  </section>
+<section>
+  <h2>Unsere Arbeiten</h2>
 
-  <footer>
-    © 2026 Ionel Rotaru – Fliesenlegerbetrieb
-  </footer>
+  <div class="slider">
+    <button class="nav prev">&#10094;</button>
+
+    <div class="gallery-wrapper">
+      <div class="gallery">
+        <img src="img1.png" alt="Projekt 1">
+        <img src="img2.png" alt="Projekt 2">
+        <img src="img3.png" alt="Projekt 3">
+        <img src="img4.png" alt="Projekt 4">
+      </div>
+    </div>
+
+    <button class="nav next">&#10095;</button>
+  </div>
+
+  <div class="dots">
+    <span></span>
+    <span></span>
+    <span></span>
+    <span></span>
+  </div>
+
+</section>
+
+<section class="contact">
+  <h2>Kontakt</h2>
+  <p>📍 D-74348 Lauffen am Neckar · Mühltorstraße 33</p>
+  <p>📧 <a href="mailto:ionelrotaru35@gmail.com">ionelrotaru35@gmail.com</a></p>
+  <p>📱 <a href="tel:+4915750833124">015750833124</a></p>
+</section>
+
+<footer>
+  © 2026 Ionel Rotaru – Fliesenlegerbetrieb
+</footer>
+
+<script>
+const wrapper = document.querySelector('.gallery-wrapper');
+const next = document.querySelector('.next');
+const prev = document.querySelector('.prev');
+
+next.addEventListener('click', () => {
+  wrapper.scrollBy({ left: 400, behavior: 'smooth' });
+});
+
+prev.addEventListener('click', () => {
+  wrapper.scrollBy({ left: -400, behavior: 'smooth' });
+});
+</script>
 
 </body>
 </html>
